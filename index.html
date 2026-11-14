@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8b6aa7">
+<meta name="description" content="Althea Contigo: espacio educativo de bienestar, convivencia y orientación.">
+<title>Althea Contigo | Tu voz importa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Althea Contigo inicio">
+    <span class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100" role="img"><path d="M50 47C30 30 34 9 50 5c16 4 20 25 0 42Zm3 4C70 29 91 34 95 50c-4 16-25 20-42 1Zm-6 3C64 72 59 93 43 97 27 93 23 72 47 54Zm-5-7C25 64 4 59 1 43 5 27 26 23 42 47Z" fill="#a783c1"/><circle cx="50" cy="50" r="12" fill="#e8b9d2"/><path d="M50 62c-1 14 1 21 8 29" fill="none" stroke="#6e9277" stroke-width="5" stroke-linecap="round"/></svg>
+    </span>
+    <span><strong>Althea Contigo</strong><small>Tu voz importa, tu bienestar también.</small></span>
+  </a>
+  <span class="demo-tag">VERSIÓN INTERACTIVA · DEMOSTRACIÓN</span>
+</header>
+
+<main class="app-shell">
+<section id="welcomeScreen" class="welcome-card">
+  <div class="welcome-logo"><span class="logo-mark big"><svg viewBox="0 0 100 100"><path d="M50 47C30 30 34 9 50 5c16 4 20 25 0 42Zm3 4C70 29 91 34 95 50c-4 16-25 20-42 1Zm-6 3C64 72 59 93 43 97 27 93 23 72 47 54Zm-5-7C25 64 4 59 1 43 5 27 26 23 42 47Z" fill="#a783c1"/><circle cx="50" cy="50" r="12" fill="#e8b9d2"/></svg></span></div>
+  <p class="eyebrow">UN ESPACIO PARA TI</p>
+  <h1>Un lugar para aprender, expresarte y encontrar orientación.</h1>
+  <p class="muted">Explora actividades sobre bienestar emocional, convivencia y redes de apoyo. Avanza a tu ritmo y recuerda que no tienes que compartir nada personal para participar.</p>
+  <form id="profileForm" class="profile-form">
+    <label for="nickname">¿Qué alias te gustaría usar?</label>
+    <input id="nickname" maxlength="24" minlength="2" placeholder="Por ejemplo: Luna23" autocomplete="nickname" required>
+    <button class="primary-btn" type="submit">Entrar a mi espacio <span>→</span></button>
+  </form>
+  <p class="privacy-note">Usa un alias, no tu nombre completo. En esta demostración, los datos se guardan solamente en este navegador y no se comparten con otros estudiantes.</p>
+</section>
+
+<section id="appScreen" class="hidden">
+  <div class="greeting-row">
+    <div><p class="eyebrow">TU ESPACIO PERSONAL</p><h1>Hola, <span id="userName">estudiante</span> 💜</h1><p class="muted">Cada pequeño paso cuenta.</p></div>
+    <button id="resetBtn" class="text-btn" type="button">Cambiar alias / reiniciar</button>
+  </div>
+  <nav class="tabs" aria-label="Secciones">
+    <button class="tab active" data-tab="inicio">Inicio</button>
+    <button class="tab" data-tab="actividades">Actividades</button>
+    <button class="tab" data-tab="comunidad">Comunidad</button>
+    <button class="tab" data-tab="althea">Althea IA</button>
+    <button class="tab" data-tab="progreso">Mi progreso</button>
+  </nav>
+
+  <section id="tab-inicio" class="tab-panel">
+    <div class="hero-panel">
+      <div><p class="eyebrow">BIENVENIDA/O A ALTHEA</p><h2>Un espacio seguro empieza con respeto.</h2><p class="muted">Aprende a reconocer emociones, practicar la empatía y descubrir dónde pedir orientación.</p><button class="primary-btn" data-go-tab="actividades">Explorar actividades</button></div>
+      <div class="hero-flower">✿</div>
+    </div>
+    <div class="stats-grid">
+      <article class="stat-card"><span>⭐</span><strong id="xpTotal">0 XP</strong><small>Puntos acumulados</small></article>
+      <article class="stat-card"><span>🌷</span><strong id="levelName">Nivel 1</strong><small id="levelSubtitle">Primeros pasos</small></article>
+      <article class="stat-card"><span>✓</span><strong id="completedCount">0/14</strong><small>Actividades completadas</small></article>
+    </div>
+    <article class="level-card"><div class="level-line"><div><p class="eyebrow">TU CAMINO</p><h2 id="levelHeading">Nivel 1 · Primeros pasos</h2></div><strong id="levelPercent">0%</strong></div><div class="progress-track"><div id="levelBar" class="progress-fill"></div></div><p id="levelHint" class="muted small">Completa actividades para avanzar.</p></article>
+    <div class="section-heading"><div><p class="eyebrow">UN MENSAJE DE ALTHEA</p><h2>Hola, aquí puedes avanzar a tu manera.</h2></div></div>
+    <div class="notice">💜 Puedes participar sin contar experiencias personales. Si algo te preocupa, puedes acercarte a una persona adulta de confianza, tutoría u orientación de tu institución.</div>
+  </section>
+
+  <section id="tab-actividades" class="tab-panel hidden">
+    <p class="eyebrow">APRENDE A TU RITMO</p><h2>Actividades</h2>
+    <p class="muted">Situaciones ficticias, preguntas y pequeñas reflexiones. Completa cada reto para ganar experiencia.</p>
+    <div class="filter-row"><span id="activityCount" class="muted small">0 actividades completadas</span><button class="soft-btn" id="showAllActivities" type="button">Ver todas</button></div>
+    <div id="activityList" class="activity-list"></div>
+  </section>
+
+  <section id="tab-comunidad" class="tab-panel hidden">
+    <p class="eyebrow">COMUNIDAD ALTHEA</p><h2>Un espacio para compartir ideas</h2>
+    <p class="muted">Publica reflexiones generales, frases o ideas positivas. Evita nombres, datos personales y detalles que identifiquen a alguien.</p>
+    <div class="notice warning">Esta versión es una demostración local: tus publicaciones y comentarios solo aparecen en este navegador. No es un foro compartido ni está moderado en un servidor.</div>
+    <form id="postForm" class="compose-card">
+      <label for="postText">¿Qué pensamiento te gustaría compartir?</label>
+      <textarea id="postText" maxlength="500" rows="4" placeholder="Una reflexión, una frase que te inspire o una idea sobre el respeto..."></textarea>
+      <div class="compose-footer"><small id="postCounter">0/500</small><button class="primary-btn" type="submit">Publicar reflexión</button></div>
+    </form>
+    <div class="section-heading"><h3>Publicaciones</h3><span class="chip">Respeto ante todo</span></div>
+    <div id="postFeed" class="post-feed"></div>
+  </section>
+
+  <section id="tab-althea" class="tab-panel hidden">
+    <div class="assistant-heading">
+      <div class="assistant-avatar"><svg viewBox="0 0 100 100"><path d="M50 47C30 30 34 9 50 5c16 4 20 25 0 42Zm3 4C70 29 91 34 95 50c-4 16-25 20-42 1Zm-6 3C64 72 59 93 43 97 27 93 23 72 47 54Zm-5-7C25 64 4 59 1 43 5 27 26 23 42 47Z" fill="#a783c1"/><circle cx="50" cy="50" r="12" fill="#e8b9d2"/></svg></div>
+      <div><p class="eyebrow">TU ACOMPAÑANTE VIRTUAL</p><h2>Habla con Althea</h2><span class="online-dot">● Disponible en modo demostración</span></div>
+    </div>
+    <div class="notice warning">Althea IA funciona aquí con respuestas de ejemplo, no con un modelo de inteligencia artificial conectado. No es una profesional de salud mental. Evita compartir datos personales o información íntima.</div>
+    <div id="chatMessages" class="chat-messages" aria-live="polite"><div class="bubble bot"><strong>Althea 🌸</strong><p>¡Hola! Estoy aquí para ofrecerte información y ejercicios educativos. ¿Qué te gustaría explorar hoy?</p></div></div>
+    <div class="quick-prompts"><button class="soft-btn" data-prompt="Quiero reconocer mis emociones">Reconocer emociones</button><button class="soft-btn" data-prompt="¿Cómo puedo apoyar a alguien?">Apoyar a alguien</button><button class="soft-btn" data-prompt="Necesito encontrar apoyo">Encontrar apoyo</button></div>
+    <form id="chatForm" class="chat-compose"><input id="chatInput" maxlength="300" placeholder="Escribe un mensaje general..." aria-label="Mensaje para Althea"><button class="primary-btn" type="submit">Enviar</button></form>
+    <div class="voice-tools"><button id="speakLast" class="soft-btn" type="button">🔊 Escuchar último mensaje</button><button id="dictateBtn" class="soft-btn" type="button">🎙️ Dictar mensaje</button><span id="voiceStatus" class="muted small"></span></div>
+  </section>
+
+  <section id="tab-progreso" class="tab-panel hidden">
+    <p class="eyebrow">TUS AVANCES</p><h2>Mi progreso</h2>
+    <div class="progress-summary"><div class="big-number" id="progressXp">0</div><div><strong>puntos de experiencia</strong><p class="muted small">Guardados en este navegador</p></div></div>
+    <div class="section-heading"><h3>Insignias</h3></div><div id="badges" class="badge-grid"></div>
+    <div class="section-heading"><h3>Resumen de actividades</h3></div><div id="progressDetails" class="progress-details"></div>
+    <div class="section-heading"><h3>Indicadores de esta demostración</h3></div>
+    <div class="metrics-grid"><div><strong id="metricPosts">0</strong><small>Reflexiones publicadas</small></div><div><strong id="metricComments">0</strong><small>Comentarios escritos</small></div><div><strong id="metricAccuracy">0%</strong><small>Promedio de respuestas correctas</small></div></div>
+    <div class="notice">Estos indicadores son locales y sirven para probar la interfaz. No son resultados de investigación ni representan a toda la población estudiantil. Para recopilar datos reales se necesitará consentimiento informado, aviso de privacidad y una base de datos segura.</div>
+  </section>
+</section>
+</main>
+<footer>Althea Contigo · Proyecto académico · Prototipo interactivo</footer>
+
+<div id="activityModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-card"><button id="closeModal" class="close-btn" type="button" aria-label="Cerrar">×</button><p id="modalEyebrow" class="eyebrow">ACTIVIDAD</p><h2 id="modalTitle">Actividad</h2><p id="modalDescription" class="muted"></p><div id="questionArea"></div><div id="feedback" class="feedback hidden" aria-live="polite"></div><div class="modal-actions"><button id="checkAnswer" class="primary-btn" type="button">Comprobar respuesta</button><button id="finishActivity" class="primary-btn hidden" type="button">Continuar</button></div></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
