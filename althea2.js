@@ -6,6 +6,7 @@
 */
 (() => {
   'use strict';
+   document.body.insertAdjacentHTML('afterbegin', '<div style="background:#b99bd4;color:white;padding:12px;text-align:center;font-weight:bold;position:relative;z-index:99999">PRUEBA ALTHEA 2.2</div>');
 
   const ADDON_KEY = 'altheaContigo_2_addon_v1';
   const AVATAR_KEY = 'altheaContigo_avatar_v1';
