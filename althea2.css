@@ -1,0 +1,38 @@
+/* Althea Contigo 2.0 — estilos adicionales */
+:root { --addon-font-scale: 1; }
+.addon-panel { animation: addonFade .22s ease both; font-size: calc(1rem * var(--addon-font-scale)); }
+@keyframes addonFade { from { opacity:0; transform:translateY(5px) } to { opacity:1; transform:translateY(0) } }
+.addon-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; margin-top:16px; }
+.addon-card { background:#fff; border:1px solid var(--line); border-radius:17px; padding:18px; margin:12px 0; }
+.addon-card h3 { color:var(--deep); margin:7px 0; }
+.addon-card p { color:var(--muted); font-size:12px; line-height:1.65; }
+.addon-card .primary-btn, .addon-card .soft-btn { margin-top:10px; }
+.addon-icon { display:inline-grid; place-items:center; width:42px; height:42px; border-radius:14px; background:var(--pink); font-size:22px; }
+.addon-options { display:grid; gap:8px; margin:14px 0; }
+.addon-options label { display:flex; gap:9px; padding:11px; border:1px solid var(--line); border-radius:11px; font-size:12px; line-height:1.5; cursor:pointer; }
+.addon-options label:has(input:checked) { background:var(--lav); border-color:var(--purple); }
+.emotion-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:17px 0; }
+.emotion-choice { border:1px solid var(--line); background:#fff; border-radius:15px; padding:13px 8px; display:grid; gap:7px; place-items:center; color:var(--ink); cursor:pointer; }
+.emotion-choice:hover, .emotion-choice:focus-visible { border-color:var(--purple); background:var(--lav); }
+.emotion-choice span { font-size:26px; }
+.emotion-choice strong { font-size:11px; }
+.addon-subhead { margin-top:23px; }
+.addon-list { display:grid; gap:8px; margin:12px 0; }
+.addon-list-row { display:flex; align-items:center; justify-content:space-between; gap:12px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:12px; }
+.addon-list-row small { color:var(--muted); }
+.addon-list-row .text-btn { flex-shrink:0; }
+.accessibility-controls { display:grid; gap:18px; }
+.addon-actions { display:flex; gap:8px; margin-top:9px; }
+.addon-toggle { display:flex; align-items:center; gap:10px; font-size:13px; font-weight:600; }
+.addon-toggle input { accent-color:var(--purple); width:18px; height:18px; }
+.demo-note { margin-top:16px; padding:13px 16px; border-radius:13px; background:#fff; border:1px dashed #d8c5e4; display:flex; flex-wrap:wrap; gap:8px 14px; font-size:11px; color:var(--muted); }
+.demo-note strong { color:var(--deep); }
+body.addon-contrast { --ink:#17121b; --muted:#403747; --purple:#593078; --deep:#3d1d59; --line:#8d789a; background:#fff; }
+body.addon-contrast .addon-card, body.addon-contrast .emotion-choice, body.addon-contrast .addon-list-row { border-color:#5b4766; }
+body.addon-reduced-motion *, body.addon-reduced-motion *::before, body.addon-reduced-motion *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline:3px solid #6f4b8b; outline-offset:2px; }
+@media(max-width:680px) {
+  .addon-grid { grid-template-columns:1fr; }
+  .emotion-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .addon-list-row { align-items:flex-start; }
+}
